@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Bookings
+{% endblock %}
+
+{% block main %}
+<style>
+    .ml15 {
+      font-weight: 800;
+      font-size: 3.8em;
+      text-transform: uppercase;
+      margin-top: 7rem;
+      margin-left: 33rem;
+      letter-spacing: 0.2em;
+    }
+
+    .ml15 .word {
+      display: inline-block;
+      line-height: 1em;
+      color: #293462;
+    }
+</style>
+<p>
+    <h1 class="ml15">
+      <span class="word">Tickets</span>
+      <span class="word">Booked</span>
+    </h1>
+    <div>
+      <span style="color: black;">Your bookings have been confirmed</span>
+      <span style="color: black;"><center>Here are your ticket details: <br>Name: {{rows[0].name}} <br>Date: {{rows[0].date}} <br> Movie name:
+      {% if rows[0].movie == 1 %}
+      Nightmare
+      {% elif rows[0].movie == 2 %}
+      Along Polly
+      {% elif rows[0].movie == 3 %}
+      Source Code
+      {% elif rows[0].movie == 4 %}
+      If only
+      {% elif rows[0].movie == 5 %}
+      A Walk to remember
+      {% elif rows[0].movie == 6 %}
+      Angle
+      {% endif %}
+      <br> Class :
+      {% if rows[0].class == 1 %}
+        Plantinum
+      {% elif rows[0].class == 2 %}
+        Gold
+      {% elif rows[0].class == 3 %}
+        Silver
+      {% endif %}
+      <br> Number of tickets: {{rows[0].num}} <br>
+      Ticket price:
+      {% if rows[0].class == 1 %}
+        9.00$
+      {% elif rows[0].class == 2 %}
+        8.50$
+      {% elif rows[0].class == 3 %}
+        8.00$
+      {% endif %}
+      <br>
+      Total price:
+      {% if rows[0].class == 1 %}
+        {{rows[0].num * 9.00 }}$
+      {% elif rows[0].class == 2 %}
+        {{rows[0].num * 8.50 }}
+      {% elif rows[0].class == 3 %}
+        {{rows[0].num * 8.00 }}
+      {% endif %}
+      </center></center></span>
+      <div class="text-center py-3">
+        <button class="btn btn-primary" >Make Payment</button>
+      </div>
+    </div>
+</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
+  anime.timeline({loop: true})
+  .add({
+    targets: '.ml15 .word',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 800,
+    delay: (el, i) => 800 * i
+  }).add({
+    targets: '.ml15',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+{% endblock %}

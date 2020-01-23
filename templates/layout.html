@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="/static/stylesheet.css" rel="stylesheet">
+
+        <!-- Font -->
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+        <!-- New Navbar-->
+        <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/homepage">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link py-2" href="/aboutus">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2" href="/contactus">Contact</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link py-2" href="/onlinebookings">Book Tickets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2" href="/logout">Log out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- logo -->
+      <div class="unbreakable-container">
+        <div class="unbreakable">
+          <span class="un">Show</span><span class="break">On</span><span class="able">Wheels</span>
+        </div>
+        <div class="ks">The Ultimate Way for Booking Movie Tickets</div>
+      </div>
+
+        <!-- Default Navbar
+        <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="/"><span class="blue">C</span><span class="red">$</span><span class="yellow">5</span><span class="green">0</span> <span class="red">Finance</span></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/quote">Quote</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/buy">Buy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/sell">Sell</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/password">Change Password</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+        -->
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid">
+            {% block main %}{% endblock %}
+        </main>
+
+        <!-- Footer -->
+        <section id="footer">
+          <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+              <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Quick links</h5>
+                <ul class="list-unstyled quick-links">
+                  <li><a href="/homepage"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                  <li><a href="/aboutus"><i class="fa fa-angle-double-right"></i>About Us</a></li>
+                  <li><a href="/onlinebookings"><i class="fa fa-angle-double-right"></i>Online Bookings</a></li>
+                  <li><a href="/upcommingmovies"><i class="fa fa-angle-double-right"></i>Upcomming Movies</a></li>
+                  <li><a href="/contactus"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+            <p style="position: relative; padding-left:350px; bottom: 170px;"class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">ShowOnWheels is an emerging entertainment company in the field of booking online movie ticktes in US. We pioneered cinema halls in US by establishing the first multiplex cinema in 2001 and the largest 9-screen multiplex cinema in 2007. With its head office in Los Angeles, ShowOnWheels in now serving the viewers of major US cities.</p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                <p><u><a href="/homepage">Show On Wheels</a></u> is a Registered MSP/ISO of Niit, Inc. Bejai [A Technical Institute for Learning Information Technology and Banking]</p>
+                <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.niit.com/india/" target="_blank">Niit</a></p>
+              </div>
+              </hr>
+            </div>
+          </div>
+        </section>
+        <!-- ./Footer -->
+
+        <!-- Logo Script -->
+        <script type="text/javascript">
+        var hotbod = document.querySelector("body");
+
+        function doStuff() {
+            hotbod.className += " animate";
+        }
+
+        window.onload = function() {
+            doStuff();
+        };
+        </script>
+        <!-- Logo Script -->
+    </body>
+
+</html>

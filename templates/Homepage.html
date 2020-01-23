@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+    <!--Movie Posters-->
+    <header>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide One - Set the background image for this slide in the line below -->
+          <div class="carousel-item active" style="background-image: url('https://stmed.net/sites/default/files/taken-2-wallpapers-29945-3290283.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="display-4">Taken 2</h3>
+              <p class="lead">Bryan Mills, a former CIA agent, and his ex-wife, Lenore, are taken hostage by a ruthless gang in Albania. However, his daughter Kim helps Bryan break free and rescue Lenore.</p>
+            </div>
+          </div>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('https://images4.alphacoders.com/212/thumb-1920-212138.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="display-4">Rio</h3>
+              <p class="lead">A bookshop owner, Linda, nurtures Blu, a macaw, after smugglers lose him in Minnesota. When she takes him to Rio, to help review his dying species, Blu is again abducted by a few smugglers.</p>
+            </div>
+          </div>
+          <!-- Slide Three - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://all4desktop.com/data_images/original/4164592-skyfall-2012-movie.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="display-4">Skyfall</h3>
+              <p class="lead">An ex-MI6 agent steals a hard drive with top secret information to carry out a vendetta on Bond's overseer, M. Bond must face his past in a bid to try and save M.</p>
+            </div>
+          </div>
+          <!-- Slide Four - Set the background image for this slide in the line below -->
+          <div class="carousel-item" style="background-image: url('http://globalbrandsmagazine.com/wp-content/uploads/2013/08/sfdfd.jpg')">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="display-4">Star Trek</h3>
+              <p class="lead">James T Kirk, who is the captain of the Starship Enterprise, explores the whole galaxy with his crew and goes on several adventures as they fight evil forces together.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="py-5">
+      <div class="container">
+        <p class="lead">ShowOnWheels is an emerging entertainment company in the field of booking online movie ticktes in US. We pioneered cinema halls in US by establishing the first multiplex cinema in 2001 and the largest 9-screen multiplex cinema in 2007. With its head office in Los Angeles, ShowOnWheels in now serving the viewers of major US cities.</p>
+        <p class="lead">Waiting in queues to book tickets for your favorite movie is now a matter of past. ShowOnWheels empowers you by offering a platform to book movie tickets anywhere, anytime. Whether shopping in a mall, enjoying a vacation at a Miami Beach, partying in a discotheque, attending a conference, or taking your pet for a walk, ShowOnWheels is there to reserve your hor seat in your favorite cinema.</p>
+      </div>
+      <div class="container py-5">
+        <h5 class="display-9">Currently Operating in :</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Los Angeles</li>
+          <li class="list-group-item">Chicago</li>
+          <li class="list-group-item">Houston</li>
+        </ul>
+        <p class="lead py-3">with an annual turnover of US $12 million, ShowOnWheels is expanding its wings. We are launching three new screens in South Africa. Shorty.</p>
+        <!-- Ads-->
+
+        <h6 class="coolFont">Hurry Up! Heavy Discounts on weekends......</h6>
+        <p class="coolFont py-2">ShowOnWheels values its customer. We keep you updated with our new discount and offers.
+    We appreciate your association!</p>
+      </div>
+    </section>
+{% endblock %}

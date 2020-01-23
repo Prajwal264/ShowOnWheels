@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Online Bookings
+{% endblock %}
+
+{% block main %}
+<!--form-->
+<div class="container" style="padding-top: 120px;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+        <form name="booking" class="form-group" method="post" onsubmit="return validate()">
+          <table class="table table-borderless text-center">
+            <tr>
+              <th class="display-4" colspan="2">Book Your Tickets Online</th>
+            </tr>
+            <tr>
+            <td>Name</td>
+            <td><input class="form-control" type="text" name="username" placeholder="Enter Your Name" required></td>
+            </tr>
+            <tr>
+              <td>Date of Bookings</td>
+              <td><input class="form-control" type="date" name="bookingdate"id="bookingdate" required></td>
+            </tr>
+            <tr>
+              <td>Movie</td>
+              <td><select class="form-control" name="movie" id="sel">
+                <option value="0">Select Movie</option>
+                <optgroup label="Drama">
+                  <option value="1">Nightmare</option>
+                  <option value="2">Along Polly</option>
+                </optgroup>
+                <optgroup label="Thriller">
+                  <option value="3">Source Code</option>
+                  <option value="4">If only</option>
+                </optgroup>
+                <optgroup label="Romantic">
+                  <option value="5">A Walk to remember</option>
+                  <option value="6">Angle</option>
+                </optgroup>
+              </select></td>
+            </tr>
+            <!--<tr>
+              <td>Show Timings</td>
+              <td>
+                <select class="form-control" name="time" id="timing">
+                  <option value="7">Select Time</option>
+                  <option value="8">10:30 AM</option>
+                  <option value="9">5:30 PM</option>
+                  <option value="10">12:30 PM</option>
+                </select>
+              </td>
+            </tr>-->
+            <tr>
+              <td>Select Class</td>
+              <td>
+                <input type="Radio" name="RB" value="1" required>Plantinum</input class="form-control">
+                <input type="Radio" name="RB" value="2" required>Gold</input class="form-control">
+                <input type="Radio" name="RB" value="3" required>Exclusive</input class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Number of Tickets</td>
+              <td><input class="form-control" type="number" name="num" placeholder="Enter Tickets" required></td>
+            </tr>
+            <tr>
+              <td>
+                <input class="form-control btn-primary" type="submit" id="submit">
+              </td>
+              <td><input class="form-control btn-primary" type="reset"></td>
+            </tr>
+          </table>
+        </form>
+    </div>
+  </div>
+</div>
+<div class="container text-center py-4">
+<h2 class="display-3">Alerts & Updates</h2>
+<div class="lead">
+  <p>New Payment options has been introduced for ticket bookings.</p>
+  <p>Mobile Booking is now resumed w.ef. 05-April-2012.</p>
+  <p>ID proof is required for getting student concession on tickets.</p>
+  <p>Ticket Bookings On Mobile: Now book your movie ticket -ANYWHERE ANYTIME through your Mobile Phones.</p>
+  <p>You are advised not to carry imflammable/dangerous/explosive articles as part pf thier luggage and also to desist from smoking in the movie halls. Please update your mobile number in our profile to receive SMS alerts for your ticket booking.</p>
+  <p>Nver purchase e-ticket from unauthorized agents or persons.</p>
+  <p>No refund will be granted on cancellation of tickets.</p>
+</div>
+</div>
+<script>
+  function validate()
+    {
+        var username = document.forms["booking"]["username"];
+        var bookingdate = document.forms["booking"]["bookingdate"];
+        var movie = document.forms["booking"]["movie"];
+        var time = document.forms["booking"]["time"];
+        var Mclass = document.forms["booking"]["RB"];
+        var num = document.forms["booking"]["num"];
+
+        if (username.value == "")
+        {
+            window.alert("Please enter the username.");
+            username.focus();
+            return false;
+        }
+
+        if (bookingdate.value == "")
+        {
+            window.alert("Please enter the booking date.");
+            bookingdate.focus();
+            return false;
+        }
+
+        if (movie.value == "")
+        {
+            window.alert("Please select the movie.");
+            movie.focus();
+            return false;
+        }
+
+        if (time.value == "")
+        {
+            window.alert("Please enter the time.");
+            time.focus();
+            return false;
+        }
+
+        if (Mclass.value == "")
+        {
+            window.alert("Please select the tier of your seating");
+            Mclass.focus();
+            return false;
+        }
+
+        if (num.value == "")
+        {
+            window.alert("Please enter the number of tickets");
+            num.focus();
+            return false;
+        }
+
+        return true;
+    }
+</script>
+{% endblock %}
